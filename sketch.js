@@ -64,7 +64,17 @@ function draw() {
 
 
 }
+function keyPressed() {
+  if (keyCode === UP_ARROW) {
+			saveCanvas('myCanvas', 'png');
+  } 
+  else if (keyCode === DOWN_ARROW) {
+    balls.pop();
+  }
+  return false; // prevent default
+}
 
 function mouseReleased() {
   balls.push(new Ellipse(mouseX, mouseY, 5, 5, 1, 1, Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), Math.floor(Math.random() * 255)));
+  draw();
 }
